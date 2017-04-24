@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const chalk = require('chalk');
 const morgan = require('morgan');
+const nunjucks = require('nunjucks');
 
 //Middleware
 
@@ -14,9 +15,10 @@ app.use(function(req, res, next){
 })
 */
 
+nunjucks.configure('views');
+
 app.get('/', function(req, res){
   res.send("Welcome to our server!")
-  //Extra Credit: Log status code
 })
 
 app.get('/news', function(req, res){
