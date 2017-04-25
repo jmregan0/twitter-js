@@ -27,7 +27,9 @@ for (let i = 0; i < 10; i++) {
 }
 
 function add (name, content) {
-  data.push({ name: name, content: content });
+  var id = data.length;
+  data.push({ name: name, id: id, content: content });
+  console.log(data);
 }
 
 function list () {
@@ -35,6 +37,7 @@ function list () {
 }
 
 function find (properties) {
+  console.log(properties);
   return _.cloneDeep(_.filter(data, properties));
 }
 

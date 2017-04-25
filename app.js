@@ -14,8 +14,8 @@ app.use('/', routes);
 app.use(morgan('dev'));
 
 nunjucks.render('index.html', function (err, output) {
-  // if (err) {throw err};
-    console.log(output);
+  //if (err) {throw err};
+  console.log(output);
 });
 
 app.set('view engine', 'html'); // have res.render work with html files
